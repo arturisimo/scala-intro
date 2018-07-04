@@ -25,7 +25,7 @@ object FilterLines {
         //val fname = "/home/training/training_materials/jes/data/loudacre.log"
         //sSource.fromFile(fname).TODO.TODO(_.TODO("4000")).TODO(line => println(line.TODO(',')(2)))
         
-        val loudacre = getClass.getResourceAsStream("loudacre.log")
+        val loudacre = getClass.getResourceAsStream("resources/loudacre.log")
          
         Source.fromInputStream(loudacre).getLines().filter(line => LogUtils.getDevModel(line) == "Titanic 4000")
                                                    .foreach(line => println(LogUtils.getDevId(line)))

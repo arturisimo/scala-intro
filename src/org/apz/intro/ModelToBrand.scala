@@ -23,37 +23,69 @@ import org.apz.intro.classes.LogUtils
  * Set. Because the Set collection ensures unique values, it will 
  * automatically remove the duplicate brands.
  * 
+ * Field Sample Data
+    Date and time 2014-03-15:10:10:31
+    Model name and number Titanic 4000
+    Unique device ID 1882b564-c7e0-4315-aa24-228c0155ee1b
+    Device temperature (Celsius) 58
+    Ambient temperature
+    (Celsius)
+    36
+    Battery available (percent) 39
+    Signal strength (percent) 31
+    CPU utilization (percent) 15
+    RAM memory usage (percent) 0
+    GPS Status
+    (enabled=TRUE,
+    disabled=FALSE)
+    TRUE
+    Bluetooth status
+    (enabled/disabled/connected)
+    enabled
+    WiFi status
+    (enabled/disabled/connected)
+    enabled
+    Latitude 37.819722
+    Longitude -122.478611
+ * 
  */
-object ModelToBrand {
+object ModelToBrand extends App {
 
-   def main(args: Array[String]) {
-     
-     getBrand("S1");
-     getBrand("F24L");
-     getBrand("KK");
+     getModel("Sorrento");
+     getModel("iFruit");
+     getModel("Ronin");
+     getModel("KK");
+     getModel("");
       
-   }
    
-   
-   def getBrand(model: String ) {
-     
-     val loudacre = getClass.getResourceAsStream("loudacre.log")
+    /**
+      * 
+     * @param model
+     */
+    def getModel(brand: String ) {
          
-     val mod2b = Source.fromInputStream(loudacre).getLines().map(line => (LogUtils.getDevModel(line).split(" ")(1), LogUtils.getDevModel(line).split(" ")(0)))
-                                                            .toMap.withDefaultValue("Record not found")
-     if (model.length > 0) {
-          println("Model name entered: " + model)
-          
-          val brand = mod2b(model)
-          println(brand)
-     
-      } else {
-          println(s"Models: $mod2b.keys()"  )
-          println(s"Brands: $mod2b.values()")
-      }
-     
-     
-   }
+         val loudacre = getClass.getResourceAsStream("loudacre.log")
+             
+         val mod2b = Source.fromInputStream(loudacre).getLines().map(line => (LogUtils.getDevModel(line).split(" ")(0), LogUtils.getDevModel(line).split(" ")(1)))
+                                                                //.toSet.groupBy((Tuple)x => x._1)
+                                                                .toMap.withDefaultValue("Record not found")
+         
+        for (s <- mod2b) println(s)
+           
+          /*
+          if (brand.length > 0) {
+              val model = mod2b(brand)
+              println(s"brand: $brand, model: $model")
+                   
+          } else {
+              println("Models: " + mod2b.keys.mkString(","))
+              println("Brands: " + mod2b.values.mkString(","))
+          }
+         */
+                                                                
+                                                                
+         
+    }
    
    
 }
