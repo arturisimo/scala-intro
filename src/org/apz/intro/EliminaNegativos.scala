@@ -1,6 +1,7 @@
 package org.apz.intro
 
 /**
+ * Sequence comprehensions. Comprehensions have the form for (enumerators) yield e
  * Collecting Data into a new Collection
  * yield returns a new collection of items rather than processing each item one at a time
  */
@@ -22,11 +23,6 @@ object EliminaNegativos extends App {
     assert (eliminaNegativos(ns2,2) sameElements ArrayBuffer(0,8,-7,4))
     println((System.nanoTime()-t2)/1000000 + "ms <<< test " + this.getClass)
     
-  /**
-   * hay que obtener los indices con negativos
-   * con esa coleccion (Si tiene más de un elemento) hay que atravesar la colección en orden inverso, borrando el elemento correspondiente, pero evitando la última posición; 
-   * Es decir, Hay que convertir 2, 4, 5 en 5, 4 y una vez hecho esto borrar las posiciones 5 y 4 del ArrayBuffer. 
-  */
    def eliminaNegativosExceptoPrimero(numeros: ArrayBuffer[Int]) = {
       
       val idx = for (n <- numeros; if(n < 0))
