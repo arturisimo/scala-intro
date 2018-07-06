@@ -10,7 +10,7 @@ object HelloScala {
       
       val myList = List("Hello", "Scala", "!")
       
-      myList.foreach(println)
+      myList.foreach(println(_))
       
       myList foreach println
       
