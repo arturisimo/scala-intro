@@ -7,4 +7,5 @@
 * 1 Array Positivos primero [PositivosPrimero](https://github.com/arturisimo/scala-intro/blob/master/src/org/apz/intro/1.PositivosPrimero.scala)
 * 2 Sequence comprehensions [EliminaNegativos](https://github.com/arturisimo/scala-intro/blob/master/src/org/apz/intro/2.EliminaNegativos.scala) [ProbandoIterators](https://github.com/arturisimo/scala-intro/blob/master/src/org/apz/intro/2.ProbandoIterators.scala)
 * 3 Función Folding [Folding](https://github.com/arturisimo/scala-intro/blob/master/src/org/apz/intro/3.Folding.scala)
-* 4 Option / match...case [Convert2Float](https://github.com/arturisimo/scala-intro/blob/master/src/org/apz/intro/4.Convert2Float.scala)   
+* 4 Option / match...case [Convert2Float](https://github.com/arturisimo/scala-intro/blob/master/src/org/apz/intro/4.Convert2Float.scala)
+* 5 Classes [Rational](https://github.com/arturisimo/scala-intro/blob/master/src/org/apz/intro/5.TestRational.scala)   
