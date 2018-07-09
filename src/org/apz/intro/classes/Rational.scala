@@ -3,7 +3,8 @@ package org.apz.intro.classes
 
 /**
  * si declaramos la clase privada y definimos un object Rational -con el mismo nombre- 
- * hacemos que sea estatica la clase Racional
+ * hacemos que sea un objeto Singleton, hay una única instancia de la clase Racional
+ * de esta manera los metodos de Rational son estaticos
  */
 object Rational {
   def apply(n: Int, d: Int) = new Rational(n,d)
