@@ -3,6 +3,14 @@ package org.apz.intro
 //_ importa todo de StringUtils
 import org.apz.intro.classes.StringUtils._
 
+/**
+ * Scala (SCALable LAnguaje) es un superset de Java, funciona en la JVM.
+ * Scala es mas expresivo (menos línes de codigo) y tiene procesamiento implicito 
+ * Scala soporta programacion imperativa, POO y funcional 
+ * 
+ * Se basa en: funciones puras y datos inmutables
+ *
+ */
 object HelloScala {
   
   def main(args: Array[String]) {

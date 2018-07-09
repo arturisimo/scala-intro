@@ -43,4 +43,5 @@ object ProbandoIterarors extends App {
   
   def mAh(percent: Double) = (percent/100) * 5400
   
+  
 }

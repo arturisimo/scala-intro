@@ -2,10 +2,14 @@ package org.apz.intro
 
 
 /**
- * Pasando una funcion como parametro
+ * Funciones son  "ciudadanos de primera clase" esto es Scala las trata igual igual que un entero, o un string). 
+ * Se pueden pasar como parametro function(function1)
+ * 
+ * Una funcion pura es una funcion determinada por los valores de entrada y siempre devuelve lo mismo (resultado determinisitos). No tiene efectos colaterales
+ * Un efecto colateral mofifica el estado de la variables
  * 
  */
-object ConvertList extends App{
+object ConvertList extends App {
   
   
     val lista = List(3.6,5.9,3.4)
@@ -25,10 +29,6 @@ object ConvertList extends App{
     
     
     def CtoF(celsius: Double) = (celsius * 9 / 5) + 32
-    
-    
-    
-    
     
   
 }
