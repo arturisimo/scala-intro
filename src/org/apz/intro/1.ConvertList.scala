@@ -41,6 +41,18 @@ object ConvertList extends App {
     val phones : List[String] = List("MeToo", "Titanic", "Ronin")
     phones.foreach(println(_))
     
+    import scala.io.Source
+  
+    val t1 = System.nanoTime()
+  
+    val loudacre = Source.fromFile("resources/loudacre.log").getLines()
+  
+    //loudacre.map(_.split(",")(2)) foreach println
+    loudacre.foreach( line => println(line.split(",")(2))) 
+
+    println((System.nanoTime()-t1)/1000000 + "ms <<< test " + this.getClass)
+    
+    
     //map
     lista.map(c => CtoF(c))
     lista.map(CtoF(_))
@@ -50,6 +62,11 @@ object ConvertList extends App {
     
     //filter
     lista.filter(_ < 23)
+    
+    import org.apz.intro.classes.LogUtils
+    
+    loudacre.filter(line => LogUtils.getDevModel(line) == "Titanic 4000")
+			.foreach(line => println(LogUtils.getDevId(line)))
     
     //utiliza la funcion compare de la Clase
     lista.sorted
