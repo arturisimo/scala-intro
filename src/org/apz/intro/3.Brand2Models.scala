@@ -20,8 +20,8 @@ object Brand2Models extends App {
      
          var mod2b : Map[String, Set[String]] = loudacre.map(line => (LogUtils.getDevModel(line).split(" ")(0), LogUtils.getDevModel(line).split(" ")(1)))
                                                        .toList //lista de tuplas marca-modelo
-                                                       .groupBy(_._1) //se agrupa por marca
-                                                       .mapValues(_.map(_._2)(collection.breakOut): Set[String])
+                                                       .groupBy(_._1) //map con clave marca y valor tuplas marca-modelo
+                                                       .mapValues(_.map(_._2)(collection.breakOut): Set[String]) //map con clave marca y valor set de modelos
   
         mod2b.getOrElse(brand, Set(s"No hay modelos de $brand"))                                              
        
@@ -29,4 +29,3 @@ object Brand2Models extends App {
    
    
 }
-
