@@ -23,9 +23,8 @@ La programacion funcional se adopta para la programación paralela y distribuida
 Scala se basa en: funciones puras y variables inmutables
 El código de Scala se escribe en bloques, expresiones que siempre devuelven un valor
 
-Tipos en Scala - Byte / Short / Int /Long / Double / Float / Char / String / Boolean
-Tipos especiales 
-- Unit vacio / - Any todo extiende de Any  
+En scala no hay tipos primitivos, todo son objetos con metodos asociados. Todos los objetos heredan de la clase abstracta **Any** . **AnyVal** y **AnyRef** extiende de Any  El tipo **Unit** es el valor vacio 
+Tipos en Scala - Byte / Short / Int / Long / Double / Float / Char / Boolean
 
 Las funciones son "ciudadanos de primer orden" se consideran como una variable, se pueden pasar como parámetro
 Se ha de procurar que sean funciones "puras" que no tienen "side effects" no cambia el valor de las variables fuera 
