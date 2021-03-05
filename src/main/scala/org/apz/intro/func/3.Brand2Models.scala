@@ -1,7 +1,9 @@
 package org.apz.intro
 
 import scala.io.Source
+
 import org.apz.intro.classes.LogUtils
+import java.io.{FileNotFoundException, IOException}
 
 
 /**
@@ -16,20 +18,22 @@ object Brand2Models extends App {
      
      longPais
      
+  
     /**
-     * 
-     * @param model
+     * @param brand
+     * @return
      */
     def getModels(brand: String ) : Set[String] = {
-         
-         val loudacre = Source.fromFile("resources/loudacre.log").getLines()
-     
-         var mod2b : Map[String, Set[String]] = loudacre.map(line => (LogUtils.getDevModel(line).split(" ")(0), LogUtils.getDevModel(line).split(" ")(1)))
-                                                       .toList //lista de tuplas marca-modelo
-                                                       .groupBy(_._1) //map con clave marca y valor tuplas marca-modelo
-                                                       .mapValues(_.map(_._2)(collection.breakOut): Set[String]) //map con clave marca y valor set de modelos
-  
-        mod2b.getOrElse(brand, Set(s"No hay modelos de $brand"))                                              
+      
+      val loudacre = Source.fromResource("loudacre.log").getLines()
+      
+      
+      var mod2b : Map[String, Set[String]] = loudacre.map(line => (LogUtils.getDevModel(line).split(" ")(0), LogUtils.getDevModel(line).split(" ")(1)))
+                                                             .toList //lista de tuplas marca-modelo
+                                                             .groupBy(_._1) //map con clave marca y valor tuplas marca-modelo
+                                                             .mapValues(_.map(_._2)(collection.breakOut): Set[String]) //map con clave marca y valor set de modelos
+        
+      mod2b.getOrElse(brand, Set(s"No hay modelos de $brand"))
        
     }
      

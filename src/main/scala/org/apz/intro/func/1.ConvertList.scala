@@ -1,4 +1,4 @@
-package org.apz.intro
+package org.apz.intro.func
 
 
 /**
@@ -45,7 +45,7 @@ object ConvertList extends App {
   
     val t1 = System.nanoTime()
   
-    val loudacre = Source.fromFile("resources/loudacre.log").getLines()
+    val loudacre = Source.fromResource("loudacre.log").getLines()
   
     //loudacre.map(_.split(",")(2)) foreach println
     loudacre.foreach( line => println(line.split(",")(2))) 

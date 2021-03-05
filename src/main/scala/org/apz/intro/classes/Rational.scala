@@ -76,7 +76,6 @@ class Rational private (n_ : Int, d_ : Int) extends Ordered[Rational] {
   
   //todo es constructor
   val (n,d) = normalizar(n_, d_)
-  println(this.toString())
   
   def + (r2:Rational) : Rational = Rational ((n * r2.d + r2.n * d), (d * r2.d)) 
   def - (r2:Rational) : Rational = Rational ((n * r2.d - d * r2.n), (d * r2.d))
